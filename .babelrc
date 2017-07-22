@@ -1,0 +1,24 @@
+{
+  "presets": ["babel-preset-expo"],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        [
+          "module-resolver", 
+          {
+            "root": ["./src"],
+            "alias": {
+              "common": "./src/features/common",
+              "services": "./src/services",
+              "main": "./src/features/main",
+              "secondary": "./src/features/secondary",
+              "raft": "./src/raft",
+              "nav": "./src/nav"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
