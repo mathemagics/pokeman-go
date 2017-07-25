@@ -22,6 +22,6 @@ SecondaryScreenContainer.propTypes = {
   secondMount: func.isRequired,
 };
 
-const mapStateToProps = state => ({ second: state.getIn(['secondary', 'message']) });
+const mapStateToProps = state => ({ message: state.getIn(['secondary', 'message']) });
 
 export default connect(mapStateToProps, { secondMount })(SecondaryScreenContainer);

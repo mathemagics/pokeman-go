@@ -1,23 +1,42 @@
 import { Map } from 'immutable';
 
 // Types
-const INITIAL_MOUNT = 'INITIAL_MOUNT';
+const SET_IMAGE = 'SET_IMAGE';
 
 // Action Creators
-export const initialMount = () => ({ type: INITIAL_MOUNT });
+export const setImage = image => (dispatch) => {
+  dispatch({
+    type: SET_IMAGE,
+    payload: image,
+  });
+};
 
 const INITIAL_STATE = Map({
-  message: 'initialized',
+  image: null,
 });
 
 // Reducer
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case INITIAL_MOUNT:
-      return state.merge({ message: 'mounted' });
+    case SET_IMAGE:
+      return state.merge({ image: action.payload });
     default:
       return state;
   }
 };
 
 // Selectors
+
+/*
+fetch('__FILE_API_ENDPOINT__', {
+  method: 'POST',
+  body: data
+}).then(response => {
+  return response.json()
+}).then(image => {
+  this.setState({
+    imageId: image.id,
+    imageUrl: image.url,
+  })
+})
+*/

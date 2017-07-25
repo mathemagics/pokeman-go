@@ -1,17 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Text } from 'react-native';
+import { Button, Image, View } from 'react-native';
 
-import { Screen } from './styles';
+export default class ImagePickerExample extends React.Component {
+  state = {
+    image: null,
+  };
 
-const MainComponent = props => (
-  <Screen>
-    <Text>{props.message}</Text>
-  </Screen>
-);
-
-MainComponent.propTypes = {
-  message: PropTypes.string.isRequired,
-};
-
-export default MainComponent;
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="Take Photo"
+          onPress={this.props.takePhoto}
+        />
+        {this.props.image &&
+          <Image source={{ uri: this.props.image }} style={{ width: 200, height: 200 }} />}
+      </View>
+    );
+  }
+}
