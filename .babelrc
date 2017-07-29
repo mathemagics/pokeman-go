@@ -14,7 +14,8 @@
               "main": "./src/features/main",
               "secondary": "./src/features/secondary",
               "raft": "./src/raft",
-              "nav": "./src/nav"
+              "nav": "./src/nav",
+              "config": "./src/config"
             }
           }
         ]
